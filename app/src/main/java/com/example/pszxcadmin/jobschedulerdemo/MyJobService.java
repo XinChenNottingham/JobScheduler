@@ -13,7 +13,7 @@ import static com.example.pszxcadmin.jobschedulerdemo.MainActivity.WORK_DURATION
 
 public class MyJobService extends JobService {
 
-    boolean jobCancelled;
+    boolean jobCancelled=false;
     @Override
     public void onCreate(){
         super.onCreate();
@@ -54,6 +54,6 @@ public class MyJobService extends JobService {
         Log.d("MDP", "job cancelled before completion: " + params.getJobId());
         // Return false to drop the job.
         jobCancelled=true;
-        return false;
+        return true;
     }
 }
